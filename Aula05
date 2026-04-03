@@ -1,0 +1,24 @@
+import math
+
+# Valores definidos diretamente
+a = 2
+b = 2
+k = 1
+p = 0
+
+logba = math.log(a, b)
+
+print("\nAnalisando T(n) = {}T(n/{}) + n^{} * (log n)^{}".format(a, b, k, p))
+print("Comparando n^k com n^(log_b a): {:.4f}\n".format(logba))
+
+if abs(k - logba) < 1e-6:
+    print("Caso 2 do Teorema Mestre")
+    print("T(n) = Theta(n^{:.4f} * (log n)^{})".format(logba, p + 1))
+
+elif k < logba:
+    print("Caso 1 do Teorema Mestre")
+    print("T(n) = Theta(n^{:.4f})".format(logba))
+
+else:
+    print("Caso 3 do Teorema Mestre")
+    print("T(n) = Theta(n^{} * (log n)^{})".format(k, p))
